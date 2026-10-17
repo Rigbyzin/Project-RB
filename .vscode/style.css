@@ -42,12 +42,11 @@ body * {
 }
 
 #GlobalBox {
-  width: 360px;
-  margin-right: auto;
-  margin-left: auto;
+  width: 100%;
+  max-width: 588px;
+  margin: 56px auto 0px;
   /* Ou apenas margin: auto; O CSS nn mexe na altura, por regras, somente na largura*/
-  padding: 24px;
-  margin-top: 56px;
+  padding: 0 24px;
   /* Ou apenas margin: 56px(referente a aultura 'Top and Bottom') auto(referente a largura 'left and right').
   Ou sequencialmente; ex: 1px 2px 3px 4px ( Top right bottom left )
   */
@@ -162,4 +161,16 @@ ul li a:hover {
 footer {
   padding: 24px 0;
   text-align: center; /* Alinhar Textos */
+}
+
+/* media queries */
+
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./Projeto/bg-desktop.jpg);
+  }
+
+  .light {
+    --bg-url: url(./Projeto/bg-desktop-light.jpg);
+  }
 }
