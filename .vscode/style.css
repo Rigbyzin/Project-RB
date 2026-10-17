@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: white;
+  --bg-url: url(./Projeto/bg-mobile.jpg);
+  --strocke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./Projeto/MoonStars.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./Projeto/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./Projeto/Sun.svg);
+}
+
+body {
+  /*
+  background-image: url(./Projeto/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  */
+  /* background: color image repeat position/size (Shorthand ou atalho, engloba tudo acima)
+  */
+
+  background: var(--bg-url) no-repeat center top / cover;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#GlobalBox {
+  width: 360px;
+  margin-right: auto;
+  margin-left: auto;
+  /* Ou apenas margin: auto; O CSS nn mexe na altura, por regras, somente na largura*/
+  padding: 24px;
+  margin-top: 56px;
+  /* Ou apenas margin: 56px(referente a aultura 'Top and Bottom') auto(referente a largura 'left and right').
+  Ou sequencialmente; ex: 1px 2px 3px 4px ( Top right bottom left )
+  */
+}
+/* Profile */
+#profile img {
+  width: 112px;
+  display: block;
+  margin: auto;
+  /* #profile {text-align: center;} Outra forma de centalizar a DIV */
+}
+
+#profile p {
+  text-align: center;
+  font-weight: 500;
+  line-height: 24px;
+  margin: 8px;
+  padding-bottom: 24px;
+}
+
+/* Switch */
+
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto; /* Posicionamento em Display Block (que é o caso do switch) */
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--stroke-color); /* ou a cor da sua borda */
+  border-radius: 50%;
+  background: white var(--switch-bg-url) no-repeat center;
+  /* Alinhando Posicionamentos absolutos*/
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  z-index: 1;
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  width: 64px;
+  height: 24px;
+  display: block;
+  background-color: var(--surface-color);
+  border: 1px solid var(--strocke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/* Links */
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Espaçamento entre itens */
+  padding: 24px 0;
+}
+
+ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
+  background-color: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px; /* arredondamento de borda*/
+  backdrop-filter: blur(4px);
+
+  text-decoration: none;
+  font-weight: bold; /* weight 500 */
+
+  transition: background 0.2s;
+}
+
+/* pseudo-selector*/
+ul li a:hover {
+  background-color: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+/* social-links */
+#social-links {
+  display: flex;
+  padding: 24px 0;
+  font-size: 24px; /* Aumenta a Fonte */
+  justify-content: center; /* Centralizou a DIV */
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+
+#social-links a:hover {
+  background-color: var(--highlight-color);
+}
+
+footer {
+  padding: 24px 0;
+  text-align: center; /* Alinhar Textos */
+}
